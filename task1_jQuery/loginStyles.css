@@ -1,0 +1,83 @@
+#bodyStyle {
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    height:100vh;
+    font-family:Arial, sans-serif;
+}
+#welcomeHeading {
+    text-align: centre;
+    margin-left:30px;
+    font-weight: bold;
+    font-size:40px;
+}
+#loginHeading {
+    text-align: centre;
+    font-weight:400;
+    font-size:20px;
+    margin-left:70px;
+    margin-top:20px;
+}
+.emailSection input {
+    position:relative;
+    height:25px;
+    width:100%;
+    margin-top:8px;
+    padding-left:15px;
+    padding-right: 15px;
+}
+.emailSection {
+    margin-top: 40px;
+    line-height: 0.7;
+}
+.passwordSection input {
+    position:relative;
+    height:25px;
+    width:100%;
+    margin-top:8px;
+    padding-left:15px;
+    padding-right: 15px;
+}
+.passwordSection {
+    margin-top: 20px;
+    line-height:0.7;
+}
+.optionSection {
+    margin-top: 30px;
+    display:flex;
+    column-gap:15px;
+}
+.forgotPassword {
+    margin-top:10px;
+    font-size: 15px;
+}
+#forgotPasswordLink:active {
+    color: blue;
+}
+#forgotPasswordLink {
+    text-decoration: none;
+}
+.loginSection {
+    margin-left:20px;
+    margin-bottom: 20px;
+}
+.loginSection button {
+    height:30px;
+    width:100%;
+    margin-top:8px;
+    border-radius:45px;
+    font-size: 15px;
+    background-color: green;
+}
+#signUpLink:active {
+    color: blue;
+}
+#signUpLink {
+    text-decoration: none;
+}
+.error {
+    margin-top: 10px;
+    color: red;
+    font-size: 0.9em;
+    display: none;
+}

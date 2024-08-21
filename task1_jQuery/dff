@@ -1,0 +1,54 @@
+$(document).ready(function() {
+    $('#email').on('focusout', function() {
+        var email = $(this).val();
+        var emailPattern = /^[a-zA-Z0-9._%+-]+@(gmail.com|yahoo.com|outlook.com)$/ // Basic email pattern
+        if (!emailPattern.test(email)) {
+            $('#emailErrorMessage').show(); // Show error if invalid
+            $("#email").css("border-color", "red");
+        }
+        else if(email==="") {
+            $('#emailErrorMessage').show(); // Show error if invalid
+            $("#email").css("border-color", "red");
+        } 
+        else {
+            $('#emailErrorMessage').hide(); // Hide error if valid
+            $("#email").css("border-color", "green");
+        }
+    });
+});
+$(document).ready(function() {
+    $('#password').on('focusout', function() {
+        var password = $(this).val();
+        var passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
+
+        // Password must be at least 8 chars long and include upper, lower, and number
+        if (!passwordPattern.test(password)) {
+            $('#passwordErrorMessage').show(); // Show error if invalid
+            $("#password").css("border-color", "red");
+        } 
+        else if(password==="") {
+            $('#passwordErrorMessage').show(); // Show error if invalid
+            $("#password").css("border-color", "red");
+        }
+        else {
+            $('#passwordErrorMessage').hide(); // Hide error if valid
+            $("#password").css("border-color", "green");
+        }
+    });
+});
+function setError($input, message) {
+    let $small = $input.siblings('small');
+    // Create a <small> element if it doesn't exist
+    if ($small.length === 0) {
+        $small = $('<small></small>').appendTo($input.parent());
+    }
+    $small.text(message).removeClass('smallhidden').addClass('smallshown');
+    $('#submit').prop('disabled', true);
+}
+function setSuccess($input) {
+    const $small = $input.siblings('small');
+    if ($small.length > 0) {
+        $small.removeClass('smallshown').addClass('smallhidden').text('');
+    }
+    $('#submit').prop('disabled', false);
+}
